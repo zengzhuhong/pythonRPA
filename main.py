@@ -38,7 +38,8 @@ def wait_and_click(image_path):
                 return True
         except Exception as e:
             # print(f"识别 {image_path} 时出错: {str(e)}")
-            pass  # 显式忽略错误，避免空代码块
+            time.sleep(0.5)
+            # pass  # 显式忽略错误，避免空代码块
     print(f"[超时] 未找到按钮: {image_path}")
     return False
 
@@ -52,7 +53,7 @@ def single_cycle(cycle_num):
             long_beep()     # 调用蜂鸣告警5秒
             time.sleep(5)   # 初始网页加载较慢，等待5秒       
             return True  # 点击按钮失败则退出本次循环
-        time.sleep(2)    # 点击后等待下一个页面加载
+        time.sleep(1)    # 点击后等待下一个页面加载
     return True
 
 def main():
